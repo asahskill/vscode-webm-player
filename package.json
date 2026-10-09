@@ -1,0 +1,28 @@
+{
+  "name": "vscode-webm-player",
+  "displayName": "WebM Player",
+  "description": "Preview WebM video in VS Code using the ogv.js WebAssembly decoders.",
+  "version": "0.1.0",
+  "publisher": "asahskill",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/asahskill/vscode-webm-player.git" },
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other"],
+  "main": "./src/extension.js",
+  "activationEvents": ["onCustomEditor:webmOgv.preview"],
+  "contributes": {
+    "customEditors": [{
+      "viewType": "webmOgv.preview",
+      "displayName": "WebM OGV Preview",
+      "selector": [{ "filenamePattern": "*.webm" }],
+      "priority": "option"
+    }]
+  },
+  "scripts": {
+    "prepare:vendor": "node scripts/copy-ogv.js",
+    "check": "node --check src/extension.js && node --check media/player.js && node --check scripts/copy-ogv.js && node --test test/*.test.js",
+    "package": "npm run prepare:vendor && vsce package --no-dependencies"
+  },
+  "dependencies": { "ogv": "1.9.0" },
+  "devDependencies": { "@vscode/vsce": "^3.0.0" }
+}

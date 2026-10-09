@@ -1,0 +1,11 @@
+.github/**
+.codex/**
+.agents/**
+.aws/**
+.gitignore
+test/**
+scripts/**
+node_modules/**
+README.md
+package-lock.json
+*.zip
