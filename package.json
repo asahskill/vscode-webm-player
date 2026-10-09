@@ -3,7 +3,7 @@
   "displayName": "WebM Player",
   "description": "Preview WebM video in VS Code using the ogv.js WebAssembly decoders.",
   "version": "0.1.0",
-  "publisher": "asahskill",
+  "publisher": "AsahSkillTeknologiIndonesia",
   "license": "MIT",
   "repository": { "type": "git", "url": "https://github.com/asahskill/vscode-webm-player.git" },
   "engines": { "vscode": "^1.85.0" },
